@@ -1,0 +1,627 @@
+@import "mixins";
+@import 'colors';
+
+
+@include mobile {
+  .main {
+    .main__container {
+      padding: 0 5vw;
+
+      .main__menu {
+        margin: 3vh 0;
+        display: flex;
+
+        .menu__list {
+          width: 100%;
+
+          .menu__item {
+            text-align: center;
+
+            a {
+              padding: 4% 0;
+              display: block;
+            }
+
+            &:hover, &:active, &:focus {
+              background-color: darken($htmlFon, 10%);
+            }
+          }
+
+          .menu__item--active {
+            text-decoration: underline 2px solid $markText;
+          }
+        }
+      }
+
+      .main__income {
+        display: flex;
+        flex-direction: column;
+
+        .income__title {
+          width: 80%;
+          margin: 3vh auto 3vh 0;
+        }
+
+        .income__content {
+          padding: 3vh;
+          background-color: $sectionFon;
+
+          .content__subtitle {
+
+          }
+
+          .content__list {
+            width: 100%;
+            margin: 2vh 0;
+
+            .strength__item {
+              padding: 2vh;
+              margin-top: 0.5vh;
+              background-color: $htmlFon;
+              text-align: center;
+
+              &:hover, &:active, &:focus {
+                color: $sectionFon;
+                background-color: $markText;
+                cursor: pointer;
+              }
+            }
+
+            .strength__item--active {
+              padding: 2vh;
+              margin-top: 0.5vh;
+              text-align: center;
+              color: $sectionFon;
+              background-color: $markText;
+            }
+          }
+
+          .content__calc-default {
+            display: none;
+          }
+
+          .content__calc-mobile {
+            width: 100%;
+            text-align: left;
+
+            .table__tr {
+              .table__th {
+                color:$TextDesc;
+                padding: 2vh;
+              }
+
+              .table__td {
+
+              }
+            }
+          }
+
+          .content__text {
+            color: $TextDesc;
+          }
+        }
+
+        .income__button {
+          background-color: $sectionFon;
+          padding: 3vh;
+          display: flex;
+          flex-direction: column;
+
+          .buttons__img {
+            width: max-content;
+            margin: 0 auto;
+          }
+
+          .buttons__link {
+            margin: 2vh 0;
+            padding: 3vh;
+            text-align: center;
+            color: $sectionFon;
+            background-color: $markText;
+          }
+        }
+      }
+
+      .main__partners {
+        margin: 5vh 0;
+
+        .partners__title {
+          margin: 5vh 0;
+        }
+
+        .partners__carousel {
+          display: flex;
+          justify-content: space-between;
+
+          .carousel__prev, .carousel__next {
+            border: none;
+            background-color: inherit;
+            padding: 2%;
+            width: 10%;
+            margin: 0 2%;
+
+            &:hover, &:active, &:focus {
+              border: 1px solid $markText;
+              cursor: pointer;
+            }
+          }
+
+          .carousel__list {
+            overflow: hidden;
+            width: 70%;
+            display: flex;
+
+            .carousel__item {
+              align-self: center;
+              margin-right: 30px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include tablet {
+  .main {
+    .main__container {
+      padding: 0 10%;
+
+      .main__menu {
+        margin: 3vh 0;
+        display: flex;
+
+        .menu__list {
+          display: flex;
+          justify-content: space-between;
+          width: 100%;
+
+          .menu__item {
+            text-align: center;
+            align-self: center;
+
+            a {
+              padding: 9px;
+              display: block;
+            }
+
+            &:hover, &:active, &:focus {
+              background-color: darken($htmlFon, 10%);
+            }
+          }
+
+          .menu__item--active {
+            border-bottom: 4px solid $markText;
+          }
+        }
+      }
+
+      .main__income {
+        display: flex;
+        flex-direction: column;
+
+        .income__title {
+          width: 80%;
+          margin: 3vh auto 3vh 0;
+        }
+
+        .income__content {
+          padding: 3vh;
+          background-color: $sectionFon;
+
+          .content__subtitle {
+
+          }
+
+          .content__list {
+            width: 100%;
+            margin: 2vh 0;
+
+            .strength__item {
+              padding: 2vh;
+              margin-top: 0.5vh;
+              background-color: $htmlFon;
+              text-align: center;
+
+              &:hover, &:active, &:focus {
+                color: $sectionFon;
+                background-color: $markText;
+                cursor: pointer;
+              }
+            }
+
+            .strength__item--active {
+              padding: 2vh;
+              margin-top: 0.5vh;
+              text-align: center;
+              color: $sectionFon;
+              background-color: $markText;
+            }
+          }
+
+          .content__calc-default {
+            display: none;
+          }
+
+          .content__calc-mobile {
+            width: 100%;
+            text-align: left;
+
+            .table__tr {
+              .table__th {
+                color:$TextDesc;
+                padding: 2vh;
+              }
+
+              .table__td {
+
+              }
+            }
+          }
+
+          .content__text {
+            color: $TextDesc;
+          }
+        }
+
+        .income__button {
+          background-color: $sectionFon;
+          padding: 3vh;
+          display: flex;
+          flex-direction: column;
+
+          .buttons__img {
+            width: max-content;
+            margin: 0 auto;
+          }
+
+          .buttons__link {
+            margin: 2vh 0;
+            padding: 3vh;
+            text-align: center;
+            color: $sectionFon;
+            background-color: $markText;
+          }
+        }
+      }
+
+      .main__partners {
+        margin: 5vh 0;
+
+        .partners__title {
+          margin: 5vh 0;
+        }
+
+        .partners__carousel {
+          display: flex;
+          justify-content: space-between;
+
+          .carousel__prev, .carousel__next {
+            border: none;
+            background-color: inherit;
+            padding: 2%;
+            width: 10%;
+            margin: 0 2%;
+
+            &:hover, &:active, &:focus {
+              border: 1px solid $markText;
+              cursor: pointer;
+            }
+          }
+
+          .carousel__list {
+            overflow: hidden;
+            width: 70%;
+            display: flex;
+
+            .carousel__item {
+              align-self: center;
+              margin-right: 30px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include laptop {
+  .main {
+    .main__container {
+      padding: 0 15%;
+
+      .main__menu {
+        margin: 3vh 0;
+        display: flex;
+
+        .menu__list {
+          display: flex;
+          justify-content: flex-start;
+          width: 100%;
+
+          .menu__item {
+            text-align: center;
+            align-self: center;
+            margin-right: 3%;
+            a {
+              padding: 9px;
+              display: block;
+            }
+
+            &:hover, &:active, &:focus {
+              background-color: darken($htmlFon, 10%);
+            }
+          }
+
+          .menu__item--active {
+            border-bottom: 4px solid $markText;
+          }
+        }
+      }
+
+      .main__income {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        .income__title {
+          width: 100%;
+          margin: 3vh auto 3vh 0;
+        }
+
+        .income__content {
+          width: 50%;
+          padding: 3vh;
+          background-color: $sectionFon;
+
+          .content__subtitle {
+
+          }
+
+          .content__list {
+            display: flex;
+            flex-wrap: wrap;
+            width: 90%;
+            margin: 2vh 0;
+
+            .strength__item {
+              width: 47%;
+              margin: 1%;
+              padding: 2vh;
+              background-color: $htmlFon;
+              text-align: center;
+
+              &:hover, &:active, &:focus {
+                color: $sectionFon;
+                background-color: $markText;
+                cursor: pointer;
+              }
+            }
+
+            .strength__item--active {
+              width: 47%;
+              margin: 1%;
+              padding: 2vh;
+              text-align: center;
+              color: $sectionFon;
+              background-color: $markText;
+            }
+          }
+
+          .content__calc-default {
+            display: none;
+          }
+
+          .content__calc-mobile {
+            .table__tr {
+              .table__th {
+                color: $TextDesc;
+                padding: 2vh;
+              }
+
+              .table__td {
+                text-align: right;
+              }
+            }
+
+          }
+
+          .content__text {
+            color: $TextDesc;
+          }
+        }
+
+        .income__button {
+          width: 50%;
+          background-color: $sectionFon;
+          padding: 3vh;
+          display: flex;
+          flex-direction: column;
+
+          .buttons__img {
+            width: max-content;
+            margin: auto;
+          }
+
+          .buttons__link {
+            margin-top: auto;
+            padding: 2vh;
+            text-align: center;
+            color: $sectionFon;
+            background-color: $markText;
+          }
+        }
+      }
+
+      .main__partners {
+        margin: 5vh 0;
+
+        .partners__title {
+          margin: 5vh 0;
+        }
+
+        .partners__carousel {
+          display: flex;
+          justify-content: space-between;
+
+          .carousel__prev, .carousel__next {
+            border: none;
+            background-color: inherit;
+            padding: 2%;
+            width: 10%;
+            margin: 0 2%;
+
+            &:hover, &:active, &:focus {
+              border: 1px solid $markText;
+              cursor: pointer;
+            }
+          }
+
+          .carousel__list {
+            overflow: hidden;
+            width: 79%;
+            display: flex;
+
+            .carousel__item {
+              align-self: center;
+              margin-right: 30px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include desktop {
+  .main {
+    .main__container {
+      padding: 0 10%;
+
+      .main__menu {
+        margin: 3vh 0;
+        display: flex;
+
+        .menu__list {
+          display: flex;
+          justify-content: flex-start;
+          width: 100%;
+
+          .menu__item {
+            text-align: center;
+            align-self: center;
+            margin-right: 3%;
+            a {
+              padding: 9px;
+              display: block;
+            }
+
+            &:hover, &:active, &:focus {
+              background-color: darken($htmlFon, 10%);
+            }
+          }
+
+          .menu__item--active {
+            border-bottom: 4px solid $markText;
+          }
+        }
+      }
+
+      .main__income {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        .income__title {
+          width: 100%;
+          margin: 3vh auto 3vh 0;
+        }
+
+        .income__content {
+          width: 65%;
+          padding: 3vh;
+          background-color: $sectionFon;
+
+          .content__subtitle {
+
+          }
+
+          .content__list {
+            display: flex;
+            flex-wrap: wrap;
+            width: 90%;
+            margin: 2vh 0;
+
+            .strength__item {
+              width: 23%;
+              margin: 0.5%;
+              padding: 1vh;
+              background-color: $htmlFon;
+              text-align: center;
+
+              &:hover, &:active, &:focus {
+                color: $sectionFon;
+                background-color: $markText;
+                cursor: pointer;
+              }
+            }
+
+            .strength__item--active {
+              width: 23%;
+              margin: 0.5%;
+              padding: 1vh;
+              text-align: center;
+              color: $sectionFon;
+              background-color: $markText;
+            }
+          }
+
+          .content__calc-default {
+            width: 100%;
+            .table__tr {
+              .table__th {
+                color: $TextDesc;
+                padding: 2vh;
+                text-align: left;
+              }
+
+              .table__td {
+                margin: auto;
+                text-align: left;
+              }
+            }
+          }
+
+          .content__calc-mobile {
+            display: none;
+
+
+          }
+
+          .content__text {
+            color: $TextDesc;
+          }
+        }
+
+        .income__button {
+          width: 35%;
+          background-color: $sectionFon;
+          padding: 3vh;
+          display: flex;
+          flex-direction: column;
+
+          .buttons__img {
+            width: max-content;
+            margin: auto;
+          }
+
+          .buttons__link {
+            margin-top: auto;
+            padding: 2vh;
+            text-align: center;
+            color: $sectionFon;
+            background-color: $markText;
+          }
+        }
+      }
+    }
+  }
+}

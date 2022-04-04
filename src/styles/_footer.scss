@@ -1,0 +1,192 @@
+@import "mixins";
+@import "colors";
+
+@include mobile {
+  .footer {
+    .footer__container {
+
+      padding: 0 1%;
+      .main__partners {
+        margin: 5vh 0;
+
+        .partners__title {
+          margin: 5vh 0;
+          padding: 0 5%;
+        }
+
+        .partners__carousel {
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+
+          .carousel__prev, .carousel__next {
+            border: none;
+            background-color: inherit;
+            padding: 2%;
+            width: content-box;
+            margin: 0 2%;
+
+            &:hover, &:active, &:focus {
+              background-color: darken($htmlFon, 20%);
+              cursor: pointer;
+            }
+          }
+          .carousel__wrapper {
+            display: flex;
+            overflow: hidden;
+            width: 90%;
+            margin:  0 auto;
+            .carousel__list {
+              transition: all 0.5s ease-in;
+              display: flex;
+              .carousel__item {
+                align-self: center;
+                margin-right: 30px;
+              }
+            }
+          }
+
+        }
+      }
+    }
+  }
+
+}
+@include tablet {
+  .footer {
+    .footer__container {
+      .main__partners {
+        margin: 5vh 0;
+
+        .partners__title {
+          padding: 0 10%;
+          margin: 5vh 0;
+        }
+
+        .partners__carousel {
+          display: flex;
+          justify-content: space-between;
+
+          .carousel__prev, .carousel__next {
+            border: none;
+            background-color: inherit;
+            padding: 2%;
+            width: 5%;
+            margin: 0 2%;
+
+            &:hover, &:active, &:focus {
+              background-color: darken($htmlFon, 20%);
+              cursor: pointer;
+            }
+          }
+          .carousel__wrapper {
+            display: flex;
+            overflow: hidden;
+            width: 79%;
+            .carousel__list {
+              transition: all 0.5s ease-in;
+              display: flex;
+              .carousel__item {
+                align-self: center;
+                margin-right: 30px;
+              }
+            }
+          }
+
+        }
+      }
+    }
+  }
+}
+@include laptop {
+  .footer {
+    .footer__container {
+      .main__partners {
+        margin: 5vh 0;
+
+        .partners__title {
+          margin: 5vh 0;
+          padding: 0 15%;
+        }
+
+        .partners__carousel {
+          display: flex;
+          justify-content: space-between;
+
+          .carousel__prev, .carousel__next {
+            border: none;
+            background-color: inherit;
+            padding: 2%;
+            width: 10%;
+            margin: 0 2%;
+
+            &:hover, &:active, &:focus {
+              background-color: darken($htmlFon, 20%);
+              cursor: pointer;
+            }
+          }
+          .carousel__wrapper {
+            display: flex;
+            overflow: hidden;
+            width: 79%;
+            .carousel__list {
+              transition: all 0.5s ease-in;
+              display: flex;
+              .carousel__item {
+                align-self: center;
+                margin-right: 30px;
+              }
+            }
+          }
+
+        }
+      }
+    }
+  }
+}
+@include desktop {
+  .footer {
+    .footer__container {
+      .main__partners {
+        margin: 5vh 0;
+
+        .partners__title {
+          padding: 0 10%;
+          margin: 5vh 0;
+        }
+
+        .partners__carousel {
+          display: flex;
+          justify-content: space-between;
+
+          .carousel__prev, .carousel__next {
+            border: none;
+            background-color: inherit;
+            padding: 2%;
+            width: 6%;
+            margin: 0 2%;
+
+            &:hover, &:active, &:focus {
+              background-color: darken($htmlFon, 20%);
+              cursor: pointer;
+            }
+          }
+          .carousel__wrapper {
+            display: flex;
+            overflow: hidden;
+            width: 79%;
+            .carousel__list {
+              display: flex;
+              transition: all 0.5s ease-in;
+              .carousel__item {
+                align-self: center;
+                margin-right: 30px;
+              }
+            }
+          }
+
+        }
+      }
+    }
+  }
+}

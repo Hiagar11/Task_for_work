@@ -1,0 +1,131 @@
+@import "mixins";
+@import 'colors';
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+html{
+  font-family: Regular sans-serif;
+  font-size: 16px;
+  line-height: 21px;
+  background-color: $htmlFon;
+}
+ul {
+  list-style-type: none;
+}
+svg {
+  width: 20px;
+  height: 20px;
+}
+a {
+  text-decoration: none;
+  color: $baseText;
+  display: block;
+}
+
+h2 {
+  font-family: Bold sans-serif;
+  font-size: 30px;
+  line-height: 39px;
+}
+.hidden {
+  visibility: hidden;
+  position: absolute;
+  z-index: -2;
+  top: -1px;
+  left: -1px;
+}
+.table__td {
+  font-family: SemiBold sans-serif;
+  font-size: 25px;
+  line-height: 33px;
+  font-weight: bolder;
+}
+.active {
+  border-bottom: 2px solid $markText;
+}
+.mark {
+  color:$markText;
+}
+
+.header {
+  background-color: $sectionFon;
+  .header__sidebar {
+    & > * > select {
+      background-color: inherit;
+      border: none;
+    }
+    .sidebar__geo {
+      position: relative;
+      &::before {
+        content: '';
+        background: url("../images/geo.svg") 50% 50% no-repeat;
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        left: -20px;
+        top: 0;
+      }
+    }
+    .sidebar__local.rus {
+      position: relative;
+      display: inline;
+      &::before {
+        content: '';
+        background: url("../images/Rus.svg") 50% 50% no-repeat;
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        left: 36px;
+        top: 2px;
+      }
+    }
+    .sidebar__person {
+      position: relative;
+      margin-left: 20px;
+      &::before {
+        content: '';
+        background: url("../images/person.svg") 50% 50% no-repeat;
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        left: -20px;
+      }
+    }
+  }
+
+}
+
+
+
+
+
+@include mobile {
+  html{
+    font-family: Regular sans-serif;
+    font-size: 20px;
+    line-height: 23px;
+    background-color: $htmlFon;
+  }
+  h2 {
+    font-size: 24px;
+    line-height: 26px;
+    font-family: Bold sans-serif;
+  }
+  .table__td {
+    font-family: SemiBold sans-serif;
+    font-size: 22px;
+    line-height: 24px;
+    font-weight: bolder;
+  }
+}
+@include laptop {
+
+}
+@include tablet {
+
+}
+@include desktop {
+
+}
