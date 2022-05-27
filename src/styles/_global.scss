@@ -1,11 +1,10 @@
+@use 'mixins';
+
 *, *::before, *::after {
   box-sizing: border-box !important;
-  margin: 0 !important;
-  padding: 0 !important;
 }
-
-h1, h2, h3, h4 {
-  font-family: forTitles;
+html {
+  min-width: 320px;
 }
 
 img {

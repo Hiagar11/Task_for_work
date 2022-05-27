@@ -1,3 +1,5 @@
+@use 'mixins';
+
 .header {
   color: var(--headerTextColor);
 }
