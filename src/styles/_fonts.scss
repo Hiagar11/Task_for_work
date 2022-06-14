@@ -1,15 +1,26 @@
 @font-face {
-  font-family: forText;
+  font-family: Hel700;
+  src: url("../fonts/HelveticaNeueCyr-Medium.ttf") format('truetype');
+}
+
+@font-face {
+  font-family: Hel500;
+  src: url("../fonts/HelveticaNeueCyr-Roman.ttf") format('truetype');
+}
+
+@font-face {
+  font-family: Hel400;
+  src: url("../fonts/HelveticaNeueCyr-Thin.ttf") format('truetype');
+}
+
+@font-face {
+  font-family: Rob400;
   src: url("../fonts/Roboto-Regular.ttf") format('truetype');
 }
 
 @font-face {
-  font-family: forTitles;
-  src: url("../fonts/Roboto-Regular.ttf") format('truetype');
+  font-family: Rob500;
+  src: url("../fonts/Roboto-Medium.ttf") format('truetype');
 }
 
-@font-face {
-  font-family: forSubText;
-  src: url("../fonts/Roboto-Regular.ttf") format('truetype');
-}
 

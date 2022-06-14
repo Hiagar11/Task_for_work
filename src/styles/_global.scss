@@ -2,6 +2,8 @@
 
 *, *::before, *::after {
   box-sizing: border-box !important;
+  margin: 0;
+  padding: 0;
 }
 html {
   min-width: 320px;
@@ -10,4 +12,12 @@ html {
 img {
   object-fit: cover;
   width: 100%;
+}
+.hidden {
+  visibility: hidden;
+  position: absolute;
+  top: -1px;
+  left:-1px;
+  z-index:-1;
+  opacity: 0;
 }

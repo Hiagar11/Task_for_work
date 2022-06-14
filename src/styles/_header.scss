@@ -1,5 +1,324 @@
 @use 'mixins';
 
 .header {
-  color: var(--headerTextColor);
+  background-color: var(--header-fon);
+  color: var(--header-textColor);
+  position: relative;
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+    @include mixins.XS {
+      padding: 0 25px;
+    }
+    @include mixins.MD {
+      padding: 0 60px;
+      z-index: 1;
+    }
+    @include mixins.LG {
+      padding: 0 150px;
+    }
+    @include mixins.XXL {
+      flex-wrap: nowrap;
+    }
+  }
+
+
+  &__logo-wrapper {
+    order: 1;
+    @include mixins.XS {
+      margin: 18px 0;
+      width: 137px;
+      height: 30px;
+    }
+    @include mixins.MD {
+      margin: 25px 0;
+      min-width: 162px;
+      height: 35px;
+    }
+  }
+
+  &__logo {
+    width: 100%;
+  }
+
+  &__mobBtn {
+    width: 23px;
+    height: 23px;
+    order: 3;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    background-color: inherit;
+
+    &.opened::before, &.opened::after {
+      content: '';
+      width: 100%;
+      position: absolute;
+      top: 9px;
+      left: 0;
+      height: 3px;
+      background-color: var(--header-textColor);
+    }
+    &.opened::before {
+      transform: rotate(45deg);
+    }
+    &.opened::after {
+      transform: rotate(-45deg);
+    }
+
+    &.closed::before {
+      content: '';
+      width: 100%;
+      position: absolute;
+      top: 2px;
+      left: 0;
+      height: 2px;
+      border-radius: 3px;
+      background-color: var(--header-textColor);
+      box-shadow: 0 9px var(--header-textColor),
+      0 18px var(--header-textColor);
+    }
+
+    @include mixins.MD {
+      display: none;
+    }
+  }
+
+  &__mobile {
+    order: 4;
+    width: 100%;
+    min-height: 90vh;
+    height: auto;
+    @include mixins.MD {
+      display: none;
+    }
+  }
+
+  &__no-mobile {
+    display: none;
+    order: 3;
+    @include mixins.MD {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+    }
+    @include mixins.XXL {
+      order: 2;
+    }
+  }
+
+  &__inpSearch-wrapper {
+    order: 2;
+    width: 22px;
+    height: 22px;
+    background: url("../images/Search.svg") no-repeat center center;
+    margin: 0 22px 0 auto;
+    @include mixins.MD {
+      display: none;
+    }
+  }
+
+  &__inpSearch {
+    display: none;
+    @include mixins.MD {
+      display: flex;
+    }
+  }
+
+}
+
+.nav {
+  width: 100%;
+  &__list {
+    list-style-type: none;
+    padding: 0;
+    @include mixins.MD {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+  }
+
+  &__item {
+    border-bottom: 1px solid var(--header-mobileBorderColor);
+    position: relative;
+    cursor: pointer;
+    @include mixins.MD {
+      border:none;
+      width: 33%;
+      text-align: center;
+    }
+    @include mixins.LG {
+      width: 15%;
+      min-width: min-content;
+      padding: 0 5px;
+      margin: 0 auto;
+    }
+    &::before {
+      content: '';
+      width: 18px;
+      height: 24px;
+      background-size: 18px 24px;
+      background: url("../images/chevron.left.svg") no-repeat center;
+      top: 22px;
+      right: 0;
+      position: absolute;
+      @include mixins.MD {
+        display: none;
+      }
+    }
+
+    &.opened::before {
+      transform: rotate(90deg);
+    }
+  }
+  .about:hover .nav__sublist {
+    display: inline-block;
+  }
+
+  &__link {
+    display: block;
+    padding: 26px 0;
+    text-decoration: none;
+    color: var(--header-textColor);
+    @include mixins.setFont(Rob500, 20px, 14px);
+    @include mixins.MD {
+      @include mixins.setFont(Hel700, 14px, 17px);
+    }
+  }
+
+
+  &__sublist {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    @include mixins.MD {
+      padding: 0 6px;
+      display: none;
+      top: 100%;
+      left: -70px;
+      position:absolute;
+      width: max-content;
+      background-color: var(--header-fon);
+      z-index: 2 ;
+    }
+  }
+
+  &__subItem {
+    border-top: 1px solid var(--header-mobileBorderColor);
+    @include mixins.MD {
+      &:first-child {
+        border-top: none;
+      }
+    }
+  }
+
+  &__subLink {
+    display: block;
+    padding: 26px 0 26px 25px;
+    @extend .nav__link;
+    @include mixins.setFont(Rob400, 14px, 14px);
+    @include mixins.MD {
+      padding: 20px 70px;
+    }
+  }
+}
+
+.tools {
+  display: none;
+  min-width: max-content;
+  @include mixins.MD {
+    display: flex;
+    align-items: center;
+    order: 2;
+    margin-left: auto;
+  }
+  & > * {
+    margin: 0 12px;
+    border-radius: 18px;
+    @include mixins.XXL {
+      margin: 0 6px
+    }
+  }
+  &__tenders {
+
+  }
+  &__priceList {
+  }
+  &__tenders, &__priceList {
+    background-color: var(--header-toolsFon);
+    color: var(--header-toolsColor);
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    @include mixins.setFont(Hel700, 14px, 18px);
+    padding: 8px 13px 8px 13px;
+  }
+  &__lang-wrapper {
+    position: relative;
+    width: 78px;
+    height: 34px;
+    background-color: var(--header-toolsFon);
+  }
+  &__lang {
+    background-color: var(--header-fon);
+    cursor: pointer;
+    transition: transform 1s linear;
+    border-radius: 18px;
+    display: flex;
+    width: 74px;
+    top: 2px;
+    left: 2px;
+    align-items: center;
+    height: 30px;
+    position: relative;
+    text-transform: uppercase;
+    justify-content: space-between;
+    @include mixins.setFont(Hel500, 14px, 18px);
+    span {
+      order: 1;
+      margin-left: 8px;
+    }
+    span.en {
+      display: none;
+    }
+    &::before {
+      order: 2;
+      content: '';
+      width: 24px;
+      border-radius: 18px;
+      height: 24px;
+      margin-right: 3px;
+      background-color: var(--header-toolsFon);
+    }
+  }
+  &__lang-input:checked + label{
+    background-color: green;
+    span.en {
+      order: 2;
+      margin: 0 8px 0 0;
+      display: block;
+    }
+    span.ru {
+      display: none;
+    }
+    &::before {
+      order: 1;
+      margin: 0 0 0 3px;
+    }
+  }
+  &__office {
+    display: inline-block;
+    border-radius: 0;
+    width: 22px;
+    height: 26px;
+    background: url("../images/PersonOffice.svg") no-repeat center;
+    margin: 0 10px;
+  }
 }

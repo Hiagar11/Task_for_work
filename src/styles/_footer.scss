@@ -1,5 +1,132 @@
 @use 'mixins';
 
 .footer {
+  background-color: var(--main-fon);
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  @include mixins.setFont(Hel400, 14px, 20px);
+  @include mixins.XS {
+    padding: 0 25px 70px 25px ;
+  }
+  @include mixins.MD {
+    padding: 0 60px 70px 60px ;
+  }
+  @include mixins.LG {
+    padding: 0 150px 70px 150px ;
+  }
 
+  &__logo {
+    margin: 30px 0;
+    width: 162px;
+    height: 35px;
+    @include mixins.MD {
+      width: 168px;
+      height: 148px;
+    }
+  }
+  &__adress {
+    @include mixins.MD {
+      margin-top: 40px;
+      width: 70%;
+    }
+    @include mixins.LG {
+      width: 30%;
+    }
+    padding-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    span {
+      @include mixins.setFont(Hel400, 16px, 20px);
+    }
+  }
+  &__spanAdress {
+    margin-bottom: 8px;
+  }
+  &__span1 {
+    margin-bottom: 16px;
+  }
+  &__span2 {
+
+  }
+  &__contacts {
+    width: 30%;
+    @include mixins.MD {
+      width: 50%;
+    }
+    @include mixins.LG {
+      margin-top: 35px;
+      width: 20%;
+    }
+  }
+  &__tel {
+    a {
+      text-decoration: none;
+      @include mixins.setFont(Hel400, 14px, 14px);
+    }
+
+  }
+  &__desc {
+    margin-top: 8px;
+  }
+  &__mails {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    break-after: left;
+    @include mixins.LG {
+      flex-direction: row;
+      width: 100%;
+      & > * {
+        margin-left: 20px;
+      }
+    }
+    @include mixins.XL {
+      margin-top: 40px;
+      width: 20%;
+      flex-direction: column;
+    }
+  }
+  &__mail {
+    padding-left: 24px;
+    text-decoration: none;
+    position: relative;
+    color: var(--main-directionText);
+    &::before {
+      content: '';
+      position: absolute;
+      top: 4px;
+      left: 0;
+      background-size: 15px 9px;
+      width: 15px;
+      height: 9px;
+      background: url("../images/mail.svg") no-repeat center;
+    }
+  }
+  &__socials {
+    align-items: center;
+    margin-top: 20px;
+    display: flex;
+    width: 100%;
+  }
+  &__insta, &__faceb {
+    display: block;
+    width: 33px;
+    height: 33px;
+    background-size: 33px 33px;
+  }
+  &__faceb {
+    background: url("../images/faceb.svg") no-repeat center;
+  }
+  &__insta {
+    margin-right: 15px;
+    background: url("../images/insta.svg") no-repeat center;
+    @include mixins.LG {
+      margin-left: auto;
+    }
+    @include mixins.XL {
+      margin-left: 0;
+    }
+  }
 }

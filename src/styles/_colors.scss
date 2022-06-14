@@ -1,4 +1,26 @@
 :root {
-//  --variable: значение | --header-fon: red
-  --headerTextColor: red;
+  --header-fon:rgba(57, 59, 60, 1);
+  --header-textColor: rgba(255, 255, 255, 1);
+  --header-toolsFon: rgba(255, 255, 255, 1);
+  --header-toolsColor: rgba(0, 0, 0, 1);
+  --header-mobileBorderColor: rgba(255, 255, 255, 0.2);
+
+
+  --main-fon: #E5E5E5;
+  --main-textColorIntro: rgba(255, 255, 255, 1);
+  --main-sectionDirectItem: rgba(255, 255, 255, 1);
+  --main-directionText: rgba(0, 0, 0, 1);
+  --main-directionSubText: rgba(75, 75, 75, 1);
+  --main-historyText: rgba(255, 255, 255, 1);
+  --main-historyControl:rgba(255, 255, 255, 0.7);
+  --main-historyTextControl: rgba(0, 54, 95, 1);
+  --main-newsFon: rgba(66, 66, 69, 1);
+  --main-newsText: rgba(255, 255, 255, 1);
+  --main-moreBorder: rgba(196, 196, 196, 1);
+
+
+
+
+
+
 }

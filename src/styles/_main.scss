@@ -1,5 +1,716 @@
 @use 'mixins';
 
-.main {
+.title {
+  @include mixins.setFont(Hel400, 24px, 24px);
+}
 
+.subtitle {
+  @include mixins.setFont(Hel400, 17px, 18px);
+}
+
+.main {
+  background-color: var(--main-fon);
+
+  & > * {
+    @include mixins.XS {
+      padding: 0 29px;
+    }
+    @include mixins.MD {
+      padding: 0 60px;
+    }
+    @include mixins.LG {
+      padding: 0 120px;
+    }
+    @include mixins.XL {
+      padding: 0 240px;
+    }
+    @include mixins.XXL {
+      padding: 0 322px;
+    }
+  }
+
+  &__intro {
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+    background: url("../images/fon-main1.png") no-repeat center;
+    background-size: cover;
+    @include mixins.MD {
+      background: url("../images/desktop_fon_intro.png") no-repeat center;
+      background-size: cover;
+    }
+  }
+
+  &__text {
+    @include mixins.setFont(Hel500, 28px, 23px);
+    padding-top: 74px;
+    @include mixins.MD {
+      padding-top: 200px;
+      @include mixins.setFont(Hel500, 36px, 46px);
+    }
+    @include mixins.LG {
+      padding-top: 200px;
+      @include mixins.setFont(Hel500, 40px, 50px);
+    }
+    @include mixins.XXL {
+      padding-top: 200px;
+      max-width: 1000px;
+      @include mixins.setFont(Hel500, 48px, 62px);
+    }
+
+    color: var(--main-textColorIntro);
+  }
+
+  &__search-wrapper {
+    display: none;
+    @include mixins.MD {
+      display: flex;
+    }
+    margin: auto 0 20px 0;
+    position: relative;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 7px;
+      right: 12px;
+      background-size: 16px 16px;
+      width: 16px;
+      height: 16px;
+      background: url("../images/search__desk.svg") no-repeat center;
+    }
+  }
+
+  &__search {
+    background-color: transparent;
+    border-radius: 18px;
+    border: 1px solid white;
+    width: 35%;
+    margin-left: auto;
+    padding:6px 17px ;
+    color: white;
+    &::placeholder {
+      color: white;
+    }
+  }
+
+  &__directionB {
+    margin-bottom: 60px;
+  }
+
+  &__history {
+    margin-bottom: -40px;
+  }
+
+  &__proud {
+    z-index: 3;
+    position: relative;
+  }
+
+  &__news {
+    margin-top: -40px;
+  }
+}
+
+
+.directionB {
+  @include mixins.XS {
+    padding: 0;
+  }
+  @include mixins.MD {
+    padding: 0 60px;
+  }
+  @include mixins.LG {
+    padding: 0 120px;
+  }
+  @include mixins.XL {
+    padding: 0 240px;
+  }
+  @include mixins.XXL {
+    padding: 0 322px;
+  }
+  &__title {
+    padding: 36px 25px;
+  }
+  &__slider {
+    @include mixins.MD {
+      display: none;
+    }
+  }
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  &__item {
+    @include mixins.XS {
+      display: none;
+    }
+    @include mixins.MD {
+      display: flex;
+      width: 45%;
+      margin-bottom: 3%;
+      padding: 27px 12px 12px 12px;
+    }
+    @include mixins.LG {
+      width: 32%;
+      margin-bottom: 2%;
+      padding: 27px 12px 12px 12px;
+    }
+    display: flex;
+    flex-direction: column;
+    border-radius: 22px;
+    background-color: var(--main-sectionDirectItem);
+  }
+  &__img {
+    margin: 0 auto;
+    width: 127px;
+    height: 127px;
+  }
+  &__content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  &__subtitle {
+    @include mixins.setFont(Hel400, 22px, 24px);
+    text-align: center;
+    margin: 17px 0;
+  }
+  &__text {
+    @include mixins.setFont(Hel400, 15px, 22px);
+  }
+  &__more {
+    text-align: center;
+    display: block;
+    @include mixins.setFont(Hel400, 22px, 24px);
+    text-transform: uppercase;
+    color: var(--main-directionText);
+    text-decoration: none;
+    padding: 24px 0;
+  }
+}
+
+.slider {
+  @include mixins.MD {
+    display: none;
+  }
+  max-width: 100vw;
+  position: relative;
+  &__hider {
+    overflow: hidden;
+    transition: all 1s ease;
+  }
+  &__list {
+    width: auto;
+    display: flex;
+    justify-content: flex-start;
+    transition: transform 1s ease;
+    transform: translateX(0);
+  }
+  &__item {
+    padding: 27px 12px;
+    margin-right: 15px;
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 auto;
+    width: 80vw;
+    text-align: center;
+    background-color: white;
+    border-radius: 18px;
+    &:first-child {
+      margin-left: 25px;
+    }
+    &:last-child {
+      margin-right: 25px;
+    }
+  }
+  &__img {
+    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+  }
+  &__title {
+    padding: 27px 0;
+    @include mixins.setFont(Hel400, 17px, 18px)
+  }
+  &__text {
+    max-width: 80%;
+    margin: auto;
+    @include mixins.setFont(Hel400, 14px, 18px)
+
+  }
+  &__more {
+    margin-top: auto;
+    display: block;
+    text-decoration: none;
+    color: var(--main-directionText);
+    text-transform: uppercase;
+    padding: 25px;
+    @include mixins.setFont(Hel400, 16px, 18px)
+
+  }
+
+  &__controlLeft,&__controlRight {
+    position: absolute;
+    top: 0;
+    border: none;
+    background-color: transparent;
+    height: 100%;
+    width: 10%;
+  }
+
+  &__controlLeft {
+    left: 0;
+  }
+  &__controlRight {
+    width: 15%;
+    right: 0;
+  }
+
+  &__dots {
+    margin: 30px auto;
+    height: 12px;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+  }
+  &__dot {
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    background-color: rgba(221,221,221,1);
+  }
+  &__dot--active {
+    background-color: rgba(192, 192, 192, 1);
+  }
+}
+
+.history {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  position: relative;
+  background: url("../images/history__fon.png") no-repeat;
+  @include mixins.MD {
+    background: url("../images/history_fon_desktop.png") no-repeat;
+    background-size: cover;
+  }
+  background-size: 100%;
+  color: var(--main-historyText);
+
+  &__title {
+    order: 1;
+    width: 100%;
+    padding: 70px 0 30px 0;
+    @include mixins.MD {
+      text-align: center;
+    }
+    @include mixins.XL {
+      @include mixins.setFont(Hel500, 44px 53px)
+    }
+  }
+
+  &__text {
+    @include mixins.XS {
+      order: 2;
+    }
+    @include mixins.setFont(Rob400, 16px, 19px);
+    @include mixins.MD {
+      @include mixins.setFont(Rob400, 20px, 22px);
+      width: 60%;
+      order: 3;
+      margin-left: auto;
+      margin-bottom: 60px;
+      @include mixins.LG {
+        @include mixins.setFont(Rob400, 24px, 28px);
+      }
+    }
+  }
+
+}
+
+.history__selector-wrapper {
+  width: 50%;
+  @include mixins.MD {
+    order: 2;
+    width: 35%;
+  }
+  order: 3;
+  display: flex;
+  flex-direction: column;
+}
+
+.history__mobile-wrapper {
+  position: absolute;
+  width: 100vw;
+  top: 90%;
+  left: 0;
+}
+
+.mobile {
+  @include mixins.MD {
+    display: none;
+  }
+  overflow: hidden;
+  width: 100%;
+  color: rgba(35, 35, 38, 1);
+  background-color: rgba(213, 216, 221, 1);
+  z-index: 10;
+  display: flex;
+  flex-wrap: wrap;
+  &__controls {
+    padding: 8px ;
+    width: 100%;
+    display: flex;
+    background-color: white;
+  }
+  &__control {
+    background-color: transparent;
+    border: none;
+    color: #3c74da;
+    cursor: pointer;
+  }
+  .top, .bottom {
+    width: 44px;
+    position: relative;
+    &::before, &::after {
+      content: '';
+      position: absolute;
+      width: 50%;
+      height: 2px;
+      background-color: #3c74da;
+    }
+  }
+  .bottom {
+    margin-right: 16px;
+    &::before {
+      left: 3px;
+      transform: rotate(45deg);
+    }
+    &::after {
+      right: 4px;
+      transform: rotate(-45deg);
+    }
+  }
+  .top {
+    margin-right: 16px;
+    &::after {
+      right: 4px;
+      transform: rotate(45deg);
+    }
+    &::before {
+      left: 3px;
+      transform: rotate(-45deg);
+    }
+  }
+
+  .ready {
+    @include mixins.setFont(Hel500);
+    font-weight: bold;
+    width: max-content;
+    padding: 6px 12px;
+    margin-left: auto;
+  }
+  &__list {
+    width: 100%;
+    list-style-type: none;
+    padding: 12px;
+  }
+  .selector__item {
+    width: 100%;
+    text-align: center;
+
+    &:nth-child(5) {
+      @include mixins.setFont(Hel400, 23px, 28px);
+      font-weight: bold;
+      border-radius: 6px;
+      background-color: rgba(201, 204, 210, 1);
+    }
+    &:nth-child(1), &:nth-child(9) {
+      @include mixins.setFont(Hel400, 6px, 28px);
+    }
+    &:nth-child(2), &:nth-child(8) {
+      @include mixins.setFont(Hel400, 12px, 28px);
+    }
+    &:nth-child(3), &:nth-child(7) {
+      @include mixins.setFont(Hel400, 17px, 28px);
+    }
+    &:nth-child(4), &:nth-child(6) {
+      @include mixins.setFont(Hel400, 21px, 28px);
+    }
+  }
+}
+
+.selector {
+  overflow: hidden;
+  display: none;
+  @include mixins.MD {
+    display: block;
+  }
+
+  &__list {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    padding-top: 12px;
+    transition: all 1s ease;
+  }
+
+  &__item {
+    cursor: pointer;
+    text-align: center;
+    &:nth-child(1), &:nth-child(9) {
+      @include mixins.setFont(Hel400, 10px, 35px);
+      opacity: 0.3;
+    }
+
+    &:nth-child(2), &:nth-child(8) {
+      @include mixins.setFont(Hel400, 18px, 35px);
+      opacity: 0.4;
+    }
+
+    &:nth-child(3), &:nth-child(7) {
+      @include mixins.setFont(Hel400, 26px, 35px);
+      opacity: 0.6;
+    }
+
+    &:nth-child(4), &:nth-child(6) {
+      @include mixins.setFont(Hel400, 33px, 35px);
+      opacity: 0.8;
+    }
+
+    &:nth-child(5) {
+      border-top: 1px solid rgba(242, 242, 242, 0.5);
+      @include mixins.setFont(Hel400, 36px, 35px);
+      border-bottom: 1px solid rgba(242, 242, 242, 0.5);
+
+    }
+  }
+}
+
+.selector__control {
+  cursor: pointer;
+  @include mixins.MD {
+    cursor: auto;
+  }
+  text-align: center;
+  margin: 30px 0 110px 0;
+  background-color: var(--main-historyControl);
+  border: none;
+  padding: 12px 24px;
+  border-radius: 28px;
+  color: var(--main-historyTextControl);
+  @include mixins.setFont(Hel500, 18px, 22px);
+}
+
+.proud {
+  background-color: var(--main-historyText);
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 30px;
+
+  &__title {
+    padding: 40px 0;
+  }
+
+  .slider {
+    @include mixins.MD {
+      display: block;
+    }
+  }
+  .slider__item {
+    display: flex;
+    flex-direction: column;
+    @include mixins.MD {
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      margin: 0 10px;
+    }
+  }
+
+  picture {
+    width: 209px;
+    height: 152px;
+    margin: 0 auto;
+    @include mixins.MD {
+      margin: 0;
+      width: 30%;
+      height: 349px;
+      display: flex;
+    }
+  }
+
+  .slider__img {
+    object-fit: contain;
+    display: block;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+  }
+
+  .slider__wrapper {
+    width: 100%;
+    @include mixins.XS {
+      margin-right:29px;
+    }
+    @include mixins.MD {
+      margin-right: 60px;
+    }
+    @include mixins.LG {
+      margin-right: 120px;
+    }
+    @include mixins.XL {
+      margin-right: 240px;
+    }
+    @include mixins.XXL {
+      margin-right: 322px;
+    }
+  }
+
+  .slider__title {
+    @include mixins.setFont(Hel400, 20px, 49px);
+    @include mixins.MD {
+      @include mixins.setFont(Hel400, 33px, 66px);
+    }
+    width: 100%;
+  }
+  .slider__text {
+    @include mixins.setFont(Hel400, 18px, 28px);
+    width: 100%;
+    text-align: left;
+    @include mixins.MD {
+      @include mixins.setFont(Hel400, 20px, 36px);
+    }
+  }
+}
+
+.news {
+  padding: 0;
+  background-color: var(--main-newsFon);
+  display: flex;
+  flex-direction: column;
+
+  &__title {
+    padding: 70px 0 30px 25px;
+    color: var(--main-newsText);
+  }
+
+  .slider {
+    @include mixins.MD {
+      display: block;
+    }
+  }
+
+  .slider__item {
+    margin:0 10px;
+    width: 80vw;
+    height: 439px;
+    padding: 0;
+    position: relative;
+    &:first-child {
+      margin-left: 25px;
+    }
+  }
+  picture {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .slider__img {
+    border-radius: 18px;
+    width: 100%;
+    height: 100%;
+  }
+
+  .slider__text {
+    font-size: 22px;
+    line-height: 27px;
+    position: absolute;
+    width: inherit;
+    top: 20px;
+    left: 10px;
+    @include mixins.MD {
+      display: none;
+    }
+  }
+  .slider__dot {
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+  .slider__dot--active {
+    background-color: rgba(255, 255, 255, 1);
+
+  }
+}
+
+.more {
+  @include mixins.MD {
+    display: none;
+  }
+  background-color: var(--main-textColorIntro);
+
+  &__title {
+    padding: 26px 0;
+  }
+
+  &__articles {
+
+  }
+}
+
+.articles {
+  display: flex;
+  flex-direction: column;
+
+  &__item {
+    padding: 24px 0;
+    display: flex;
+    border-bottom: 1px solid var(--main-moreBorder);
+
+    &:nth-child(3) {
+      border: 0;
+    }
+  }
+
+  &__img {
+    margin-right: 16px;
+    width: 102px;
+    height: 102px;
+    border-radius: 10px;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    padding-bottom: 6px;
+    @include mixins.setFont(Hel400, 14px, 21px);
+    color: var(--main-directionSubText);
+  }
+
+  &__subtitle {
+    @include mixins.setFont(Hel400, 16px, 18px);
+  }
+
+  &__date {
+    color: var(--main-directionSubText);
+    @include mixins.setFont(Hel400, 16px, 24px);
+    margin-top: auto;
+  }
+
+  &__allNews {
+    color: var(--header-textColor);
+    background-color: var(--main-historyTextControl);
+    padding: 8px;
+    text-decoration: none;
+    border-radius: 18px;
+    margin: 40px auto 30px auto;
+    @include mixins.setFont(Hel700, 14px, 17px);
+  }
 }

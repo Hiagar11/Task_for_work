@@ -2,20 +2,7 @@ const htmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const webpack = require('webpack');
-const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
-const {extendDefaultPlugins} = require("svgo");
-const Spritesmith = require('spritesmith');
 
-const sprites = [];
-Spritesmith.run({src: sprites}, function handleResult (err, result) {
-    result.image; // Buffer representation of image
-    result.coordinates; // Object mapping filename to {x, y, width, height} of image
-    result.properties; // Object with metadata about spritesheet {width, height}
-});
-
-const PATHS = {
-    src: path.join(__dirname, 'src')
-}
 
 let mode = 'development';
 if (process.env.NODE_ENV === 'production') {
@@ -89,41 +76,6 @@ module.exports = {
 
     },
     optimization: {
-        minimizer: [
-            "...",
-            new ImageMinimizerPlugin({
-                minimizer: {
-                    implementation: ImageMinimizerPlugin.imageminMinify,
-                    options: {
-                        // Lossless optimization with custom option
-                        // Feel free to experiment with options for better result for you
-                        plugins: [
-                            ["gifsicle", {interlaced: true}],
-                            ["jpegtran", {progressive: true}],
-                            ["optipng", {optimizationLevel: 5}],
-                            // Svgo configuration here https://github.com/svg/svgo#configuration
-                            [
-                                "svgo",
-                                {
-                                    plugins: extendDefaultPlugins([
-                                        {
-                                            name: "removeViewBox",
-                                            active: false,
-                                        },
-                                        {
-                                            name: "addAttributesToSVGElement",
-                                            params: {
-                                                attributes: [{xmlns: "http://www.w3.org/2000/svg"}],
-                                            },
-                                        },
-                                    ]),
-                                },
-                            ],
-                        ],
-                    },
-                },
-            }),
-        ],
         splitChunks: {
             cacheGroups: {
                 styles: {
